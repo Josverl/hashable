@@ -19,7 +19,7 @@ See Error
 
 D:\repos\Stubber-test-repos\hashable\src\validate_hasable.py:6:6 - error: Dictionary key must be hashable
 
-peix per type for : 
+peix per type for :
 
 - int
 - str
@@ -28,27 +28,27 @@ should add inheritance to object ?
 
     in typeshed stdlib the`__hash__` method is defined on object ?
 
-
-Some modules are available on two levels and with multiple names 
+Some modules are available on two levels and with multiple names
 
 - `typings/os.pyi`
 - `typings/uos.pyi`
 - `typings/stdlib/os/__init__.pyi`
-
-
 - `typings/io.pyi`
 - `typings/uio.pyi`
 - `typings/stdlib/io.pyi`
 
-Solution 
+Solution
 
     * import everthing from the stdlib modules in the userclass leven
 
     File`typings/os.pyi`
 		`from stdlib.os import * `
 
-this needs an update in stubber to add addtional glue imports to these modules 
+this needs an update in stubber to add addtional glue imports to these modules
 
+1. os/uos
+2. io/uio
+3. socket
 
 ## other issues
 

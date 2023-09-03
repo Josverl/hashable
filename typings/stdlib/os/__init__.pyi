@@ -1,21 +1,43 @@
 import sys
-from abc import abstractmethod
+from abc import abstractmethod # type: ignore[misc]
 from builtins import OSError
-from collections.abc import (Callable, Iterable, Iterator, Mapping,
-                             MutableMapping, Sequence)
+from collections.abc import Callable, Iterable, Iterator, Mapping, MutableMapping, Sequence
 from contextlib import AbstractContextManager
 from io import BufferedRandom, BufferedReader, BufferedWriter, FileIO
 from io import TextIOWrapper as _TextIOWrapper
-from subprocess import Popen
-from typing import (IO, Any, AnyStr, BinaryIO, Generic, NoReturn, Protocol,
-                    TypeVar, overload, runtime_checkable)
 
-from _typeshed import (AnyStr_co, BytesPath, FileDescriptorLike, GenericPath,
-                       OpenBinaryMode, OpenBinaryModeReading,
-                       OpenBinaryModeUpdating, OpenBinaryModeWriting,
-                       OpenTextMode, ReadableBuffer, Self, StrOrBytesPath,
-                       StrPath, SupportsLenAndGetItem, WriteableBuffer,
-                       structseq)
+# from subprocess import Popen
+from typing import (
+    IO,
+    Any,
+    AnyStr,
+    BinaryIO,
+    Generic,
+    NoReturn,
+    Protocol,
+    TypeVar,
+    overload,
+    runtime_checkable,
+)
+
+from _typeshed import (
+    AnyStr_co,
+    BytesPath,
+    FileDescriptorLike,
+    GenericPath,
+    OpenBinaryMode,
+    OpenBinaryModeReading,
+    OpenBinaryModeUpdating,
+    OpenBinaryModeWriting,
+    OpenTextMode,
+    ReadableBuffer,
+    Self,
+    StrOrBytesPath,
+    StrPath,
+    SupportsLenAndGetItem,
+    WriteableBuffer,
+    structseq,
+)
 from typing_extensions import Final, Literal, TypeAlias, final
 
 from . import path as _path
@@ -24,7 +46,7 @@ if sys.version_info >= (3, 9):
     from types import GenericAlias
 
 # This unnecessary alias is to work around various errors
-path = _path
+path = _path # type: ignore[assignment]
 
 _T = TypeVar("_T")
 _T1 = TypeVar("_T1")
@@ -906,7 +928,7 @@ if sys.platform != "win32":
         def plock(__op: int) -> None: ...  # ???op is int?
 
 class _wrap_close(_TextIOWrapper):
-    def __init__(self, stream: _TextIOWrapper, proc: Popen[str]) -> None: ...
+    def __init__(self, stream: _TextIOWrapper, proc) -> None: ...
     def close(self) -> int | None: ...  # type: ignore[override]
 
 def popen(cmd: str, mode: str = ..., buffering: int = ...) -> _wrap_close: ...

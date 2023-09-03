@@ -5,7 +5,9 @@ socket module. See: https://docs.micropython.org/en/v1.20.0/library/socket.html
 
 This module provides access to the BSD socket interface.
 """
-from typing import IO, Optional, Tuple, Any
+from typing import IO, Any, Optional, Tuple
+
+from stdlib.socket import *  # type: ignore[attr-defined]
 
 SOCK_RAW: int
 SOCK_DGRAM: int

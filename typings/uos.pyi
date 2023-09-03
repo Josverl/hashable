@@ -9,7 +9,7 @@ functions.
 """
 from typing import IO, Any, Iterator, Optional, Tuple
 
-from stdlib.os import *
+from stdlib.os import uname_result, *  # type: ignore[attr-defined]
 
 def stat(path) -> Any:
     """
