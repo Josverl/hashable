@@ -1,0 +1,5 @@
+.venv
+
+typeshed-fallback
+
+%repos%Stubber-test-repos%hashable/chat_history/history.sqlite
