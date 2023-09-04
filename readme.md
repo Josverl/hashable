@@ -50,6 +50,14 @@ this needs an update in stubber to add addtional glue imports to these modules
 2. io/uio
 3. socket
 
+
+```
+pip install git+https://github.com/josverl/micropython-stubs.git@stdlib-updates#subdirectory=publish\micropython-stdlib-stubs --target typings --no-user  
+pip install git+https://github.com/josverl/micropython-stubs.git@stdlib-updates#subdirectory=publish\micropython-v1_20_0-esp32-stubs --target typings --no-user  
+
+
+```
+
 ## other issues
 
 ##### stdlib/_typeshed - outdated - errors

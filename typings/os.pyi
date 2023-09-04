@@ -7,10 +7,8 @@ The ``os`` module contains functions for filesystem access and mounting,
 terminal redirection and duplication, and the ``uname`` and ``urandom``
 functions.
 """
-
-from typing import IO, Any, Iterator, Optional, Tuple
-
-from stdlib.os import *  # type: ignore
+from typing import IO, Iterator, Optional, Tuple, Any
+from stdlib.os import *
 
 def stat(path) -> Any:
     """

@@ -44,7 +44,7 @@ class abstractclassmethod(classmethod[_T, _P, _R_co]):  # type: ignore
 
 class abstractstaticmethod(staticmethod[_P, _R_co]):  # type: ignore
     __isabstractmethod__: Literal[True]
-    def __init__(self, callable: Callable[_P, _R_co]) -> None: ...
+    def __init__(self, callable: Callable[_P, _R_co]) -> None: ...  # type: ignore
 
 class abstractproperty(property):
     __isabstractmethod__: Literal[True]

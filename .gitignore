@@ -2,4 +2,7 @@
 
 typeshed-fallback
 
-%repos%Stubber-test-repos%hashable/chat_history/history.sqlite
+%*
+typings-man
+typings_3
+

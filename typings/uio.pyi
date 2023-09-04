@@ -6,9 +6,8 @@ input/output streams. See: https://docs.micropython.org/en/v1.20.0/library/io.ht
 This module contains additional types of `stream` (file-like) objects
 and helper functions.
 """
-from typing import IO, Any, Optional
-
-from stdlib.io import *  # type: ignore
+from typing import IO, Optional, Any
+from stdlib.io import *
 
 def open(name, mode="r", **kwargs) -> Any:
     """
