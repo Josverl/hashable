@@ -20,13 +20,11 @@ See Error
 D:\repos\Stubber-test-repos\hashable\src\validate_hasable.py:6:6 - error: Dictionary key must be hashable
 
 peix per type for :
-
-- int
+- int, str ....
 - str
 
-should add inheritance to object ?
-
-    in typeshed stdlib the`__hash__` method is defined on object ?
+Fixed by full update of stdlib to 3.11+ ,
+and then removing the bulk of features not supported in Micropython ( Manual labor )-: 
 
 Some modules are available on two levels and with multiple names
 
@@ -39,23 +37,23 @@ Some modules are available on two levels and with multiple names
 
 Solution
 
-    * import everthing from the stdlib modules in the userclass leven
+    * import everthing from the stdlib modules in the micropython module level modules 
 
     File`typings/os.pyi`
 		`from stdlib.os import * `
 
 this needs an update in stubber to add addtional glue imports to these modules
+and exposed a limitation of libcst which does not copy over `from foo import *` by default
 
 1. os/uos
 2. io/uio
 3. socket
+4. sys
 
-
+install from branch & folder 
 ```
-pip install git+https://github.com/josverl/micropython-stubs.git@stdlib-updates#subdirectory=publish\micropython-stdlib-stubs --target typings --no-user  
-pip install git+https://github.com/josverl/micropython-stubs.git@stdlib-updates#subdirectory=publish\micropython-v1_20_0-esp32-stubs --target typings --no-user  
-
-
+pip install git+https://github.com/josverl/micropython-stubs.git@stdlib-updates#subdirectory=publish/micropython-stdlib-stubs --target typings --no-user  
+pip install git+https://github.com/josverl/micropython-stubs.git@stdlib-updates#subdirectory=publish/micropython-v1_20_0-esp32-stubs --target typings --no-user  
 ```
 
 ## other issues
